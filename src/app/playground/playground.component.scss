@@ -1,0 +1,8 @@
+.playground {
+  display: flex;
+  gap: 20px;
+}
+
+app-code-editor, app-live-preview {
+  flex: 1;
+}

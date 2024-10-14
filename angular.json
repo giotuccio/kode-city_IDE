@@ -27,12 +27,22 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min",
+                "output": "/assets/monaco-editor/"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+"scripts": [
+  "node_modules/ace-builds/src-noconflict/ace.js",
+  "node_modules/ace-builds/src-noconflict/ext-language_tools.js"
+]
+
+
           },
           "configurations": {
             "production": {
@@ -100,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5ffaf8d1-08a5-4b0d-8de8-c721b437d185"
   }
 }
