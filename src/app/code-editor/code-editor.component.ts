@@ -13,12 +13,26 @@ declare const ace: any;
 export class CodeEditorComponent implements AfterViewInit {
   @ViewChild('editor') editor!: ElementRef;
   @Output() codeChange = new EventEmitter<string>();  // Emit string, not Event
-
+  @ViewChild('htmlEditor', { static: false }) htmlEditor!: ElementRef;
+  @ViewChild('cssEditor', { static: false }) cssEditor!: ElementRef;
+  @ViewChild('jsEditor', { static: false }) jsEditor!: ElementRef;
+  public activeTab = 'html';
   ngAfterViewInit() {
     const aceEditor = ace.edit(this.editor.nativeElement);
     aceEditor.setTheme('ace/theme/monokai');
     aceEditor.session.setMode('ace/mode/html');
-    aceEditor.setValue('<html><body>Hello, Kode City!</body></html>');
+    aceEditor.setValue(`
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kode City IDE</title>
+</head>
+  <body>
+      <div>
+           <h1>Welcome To, Kode City!</h1>
+      </div>
+  </body>
+</html>`);
 
     // Extract the new code from the editor's session on change
     aceEditor.session.on('change', () => {

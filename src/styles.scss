@@ -37,3 +37,30 @@ $kode-city-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$breakpoint-xs: 600px; // Define a breakpoint for mobile screens
+$breakpoint-md: 960px; // Define for tablets
+
+.playground {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  // Mobile responsiveness
+  @media (max-width: $breakpoint-xs) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+app-code-editor, app-live-preview {
+  flex: 1;
+}
+
+.terminal-container {
+  margin-top: 20px;
+  height: 400px;
+
+  @media (max-width: $breakpoint-xs) {
+    height: 300px;
+  }
+}

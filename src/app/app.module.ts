@@ -8,7 +8,7 @@ import { CodeEditorComponent } from './code-editor/code-editor.component';
 import { LivePreviewComponent } from './live-preview/live-preview.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { AceModule } from 'ngx-ace-wrapper';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +20,7 @@ import { AceModule } from 'ngx-ace-wrapper';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
   ],
   providers: [],
